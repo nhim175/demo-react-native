@@ -2,8 +2,10 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
 export default class Category extends React.Component {
-  static navigationOptions = {
-    title: 'Category'
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam('categoryName')
+    };
   };
 
   render() {

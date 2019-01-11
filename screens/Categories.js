@@ -27,7 +27,11 @@ export default class Categories extends React.Component {
         renderItem={({ item }) => (
           <CategoryListItem
             category={item}
-            onPress={() => navigation.navigate('Category')}
+            onPress={() =>
+              navigation.navigate('Category', {
+                categoryName: item.name
+              })
+            }
           />
         )}
         keyExtractor={item => `${item.id}`}
