@@ -1,15 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, FlatList } from 'react-native';
 import CategoryListItem from './components/CategoryListItem';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      categories: [
+        { id: 1, name: 'Dụng cụ trượt tuyết' },
+        { id: 2, name: 'Quần áo trượt tuyết' },
+        { id: 3, name: 'Kính mũ' }
+      ]
+    };
+  }
+
   render() {
+    const { categories } = this.state;
     return (
-      <View style={styles.container}>
-        <CategoryListItem />
-        <CategoryListItem />
-        <CategoryListItem />
-      </View>
+      <FlatList
+        data={categories}
+        renderItem={({ item }) => <CategoryListItem category={item} />}
+        keyExtractor={item => `${item.id}`}
+        contentContainerStyle={{ paddingLeft: 16, paddingRight: 16 }}
+      />
     );
   }
 }
