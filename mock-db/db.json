@@ -1,0 +1,51 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Dụng cụ trượt tuyết"
+    },
+    {
+      "id": 2,
+      "name": "Quần áo trượt tuyết"
+    },
+    {
+      "id": 3,
+      "name": "Kính mũ"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "images": [
+        {
+          "url": "https: //res.cloudinary.com/djeghcumw/image/upload/v1547297558/tuts/snowboard.png"
+        }
+      ],
+      "name": "Snowboard",
+      "price": "5000000",
+      "category": 1
+    },
+    {
+      "id": 2,
+      "images": [
+        {
+          "url": "https: //res.cloudinary.com/djeghcumw/image/upload/v1547297558/tuts/snowboard.png"
+        }
+      ],
+      "name": "Snowboard",
+      "price": "5000000",
+      "category": 1
+    },
+    {
+      "id": 3,
+      "images": [
+        {
+          "url": "https: //res.cloudinary.com/djeghcumw/image/upload/v1547297558/tuts/snowboard.png"
+        }
+      ],
+      "name": "Snowboard",
+      "price": "5000000",
+      "category": 2
+    }
+  ]
+}
