@@ -16,7 +16,7 @@ export default class Categories extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/categories')
+    axios.get('/categories')
       .then(res => {
         this.setState({
           categories: res.data
@@ -38,7 +38,8 @@ export default class Categories extends React.Component {
             category={item}
             onPress={() =>
               navigation.navigate('Category', {
-                categoryName: item.name
+                categoryName: item.name,
+                id: item.id
               })
             }
           />

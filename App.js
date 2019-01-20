@@ -1,7 +1,10 @@
 import React from 'react';
+import axios from 'axios';
 import { StyleSheet } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import AppNavigator from './AppNavigator';
+
+axios.defaults.baseURL = 'http://localhost:3001';
 
 const AppContainer = createAppContainer(AppNavigator);
 

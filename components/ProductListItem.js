@@ -5,7 +5,7 @@ import { formatPrice } from '../utils/Number';
 
 export default function ProductListItem(props) {
   const { product, onAddToCartClick } = props;
-
+  console.log({ product });
   return (
     <View style={styles.shadow}>
       <View style={styles.container}>

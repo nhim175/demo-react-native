@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { StyleSheet, View, FlatList } from 'react-native';
 import ProductListItem from '../components/ProductListItem'
 
@@ -12,31 +13,22 @@ export default class Category extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: [
-        {
-          id: 1,
-          images: [
-            {
-              url:
-                'https://res.cloudinary.com/djeghcumw/image/upload/v1547297558/tuts/snowboard.png'
-            }
-          ],
-          name: 'Snowboard',
-          price: '5000000'
-        },
-        {
-          id: 2,
-          images: [
-            {
-              url:
-                'https://res.cloudinary.com/djeghcumw/image/upload/v1547297558/tuts/snowboard.png'
-            }
-          ],
-          name: 'Snowboard',
-          price: '5000000'
-        }
-      ]
+      products: []
     };
+  }
+
+  async componentDidMount() {
+    const { navigation } = this.props;
+    const id = navigation.getParam('id');
+    console.log({ id });
+    try {
+      const { data: products } = await axios.get(`/products?category=${id}`);
+      this.setState({
+        products
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {
